@@ -10,9 +10,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/users');
 
-const userRoutes = require('./routes 2/users');
+const userRoutes = require('./routes/user');
 const campgroundRoutes = require('./routes/campground');
-const reviewRoutes = require('./routes 2/reviews');
+const reviewRoutes = require('./routes/review');
 mongoose.connect('mongodb://localhost:27017/yelp-camp');
 
 const db = mongoose.connection;
