@@ -4,8 +4,7 @@ const { validateCampground, isLoggedIn, isReviewAuthor } = require('../middlewar
 const { createReview, deleteReview } = require('../controller/reviews');
 const catchAsync = require('../utils/catchAsync');
 
-router.post('/', isLoggedIn, validateCampground, catchAsync(createReview))
-
-router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(deleteReview))
+router.post('/', isLoggedIn, validateReview, catchAsync(reviews.createReview))
+router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(reviews.deleteReview))
 
 module.exports = router;
