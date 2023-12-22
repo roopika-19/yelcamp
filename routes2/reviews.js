@@ -8,9 +8,9 @@
 // const ExpressError = require('../utils/ExpressError');
 // const catchAsync = require('../utils/catchAsync');
 
-router.post('/', isLoggedIn, validateReview, catchAsync(reviews.createReview))
+// router.post('/', isLoggedIn, validateReview, catchAsync(reviews.createReview))
 
-router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(reviews.deleteReview))
+// router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(reviews.deleteReview))
 
 // module.exports = router;                   
 const express = require('express');
@@ -26,7 +26,7 @@ router.post('/', isLoggedIn, validateReview, catchAsync(async (req, res) => {
     const review = new Review(req.body.review);
     review.author = req.user._id;
     campground.reviews.push(review);
-    console.log(review)
+    
     await review.save();
     await campground.save();
     req.flash('success', 'Created new review!');

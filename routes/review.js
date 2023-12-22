@@ -7,7 +7,7 @@ const reviews = require('../controller/reviews');
 const ExpressError = require('../utils/ExpressError');
 const catchAsync = require('../utils/catchAsync');
 
-router.post('/', isLoggedIn, validateReview, catchAsync(reviews.createReview))
-router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(reviews.deleteReview))
+router.post('/',  validateReview, catchAsync(reviews.createReview))
+router.delete('/:reviewId', isReviewAuthor, catchAsync(reviews.deleteReview))
 
 module.exports = router;
