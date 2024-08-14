@@ -17,7 +17,7 @@ const User = require('./models/users');
 const userRoutes = require('./routes/user');
 const campgroundRoutes = require('./routes/campground');
 const reviewRoutes = require('./routes/review');
-mongoose.connect('mongodb+srv://roopikasaxena19:rWYPB8V2GM9s7zrc@cluster0.yal08d9.mongodb.net/');
+mongoose.connect('mongodburl/');
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
